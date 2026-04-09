@@ -10,7 +10,7 @@ Residex is a frontend-focused TanStack Start application in a pnpm monorepo.
 - TanStack [Start](https://tanstack.com/start/latest) + [Router](https://tanstack.com/router/latest) + [Query](https://tanstack.com/query/latest) + [Form](https://tanstack.com/form/latest)
 - [Vite 8](https://vite.dev/) + [Nitro v3](https://nitro.build/)
 - [Tailwind CSS](https://tailwindcss.com/) + [shadcn/ui](https://ui.shadcn.com/) + [Base UI](https://base-ui.com/) (base-maia, [`--preset b1ZOKpgEC`](https://ui.shadcn.com/create?preset=b1ZOKpgEC&base=base&template=start))
-- Shared UI primitives via [`@repo/ui`](./packages/ui)
+- Shared UI primitives via [`@residex/ui`](./packages/ui)
 
 ```sh
 ├── apps
