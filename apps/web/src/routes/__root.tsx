@@ -13,8 +13,6 @@ import {
 } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 
-import { meta, seo } from "~/lib/meta";
-
 import appCss from "~/styles.css?url";
 
 interface MyRouterContext {
@@ -31,12 +29,15 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         name: "viewport",
         content: "width=device-width, initial-scale=1",
       },
-      ...seo(meta),
+      {
+        title: "residex",
+      },
+      {
+        name: "description",
+        content: "Residex web application.",
+      },
     ],
-    links: [
-      { rel: "stylesheet", href: appCss },
-      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
-    ],
+    links: [{ rel: "stylesheet", href: appCss }],
   }),
   shellComponent: RootDocument,
 });
