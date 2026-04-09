@@ -1,5 +1,5 @@
 {
-  "name": "@repo/ui",
+  "name": "@residex/ui",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -14,6 +14,8 @@
   },
   "dependencies": {
     "@base-ui/react": "catalog:",
+    "@fontsource-variable/dm-sans": "catalog:",
+    "@fontsource-variable/geist": "catalog:",
     "@icons-pack/react-simple-icons": "catalog:",
     "@tanstack/react-form-start": "catalog:",
     "class-variance-authority": "catalog:",
@@ -21,6 +23,7 @@
     "date-fns": "catalog:",
     "lucide-react": "catalog:",
     "motion": "catalog:",
+    "next-themes": "catalog:",
     "shadcn": "catalog:",
     "sonner": "catalog:",
     "tailwind-merge": "catalog:",
@@ -28,7 +31,7 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@repo/tsconfig": "workspace:*",
+    "@residex/tsconfig": "workspace:*",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "tailwindcss": "catalog:",
