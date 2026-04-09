@@ -1,12 +1,12 @@
 {
-  "extends": "@repo/tsconfig/base.json",
+  "extends": "@residex/tsconfig/base.json",
   "compilerOptions": {
     "types": ["node", "vite/client"],
     "paths": {
       "~/*": ["./src/*"],
 
       // for shadcn CLI
-      "@repo/ui/*": ["../../packages/ui/*"]
+      "@residex/ui/*": ["../../packages/ui/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx"],

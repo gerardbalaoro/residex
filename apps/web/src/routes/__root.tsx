@@ -1,5 +1,5 @@
-import { Toaster } from "@repo/ui/components/sonner";
-import { ThemeProvider } from "@repo/ui/lib/theme-provider";
+import { Toaster } from "@residex/ui/components/sonner";
+import { ThemeProvider } from "@residex/ui/lib/theme-provider";
 import { a11yDevtoolsPlugin } from "@tanstack/devtools-a11y/react";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import { formDevtoolsPlugin } from "@tanstack/react-form-devtools";
@@ -12,6 +12,8 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
+
+import { meta, seo } from "~/lib/meta";
 
 import appCss from "~/styles.css?url";
 
@@ -29,15 +31,12 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         name: "viewport",
         content: "width=device-width, initial-scale=1",
       },
-      {
-        title: "residex",
-      },
-      {
-        name: "description",
-        content: "Residex web application.",
-      },
+      ...seo(meta),
     ],
-    links: [{ rel: "stylesheet", href: appCss }],
+    links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+    ],
   }),
   shellComponent: RootDocument,
 });

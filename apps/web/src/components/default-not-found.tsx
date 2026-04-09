@@ -1,4 +1,4 @@
-import { Button } from "@repo/ui/components/button";
+import { Button } from "@residex/ui/components/button";
 import { Link } from "@tanstack/react-router";
 
 export function DefaultNotFound() {
