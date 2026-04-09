@@ -3,26 +3,19 @@
 > [!IMPORTANT]
 > This template requires [Vite+ `vp`](https://viteplus.dev/guide/#install-vp) and [pnpm](https://pnpm.io/installation) to be installed.
 
-This project was scaffolded with `create-mugnavo` from commit [`60a2641`](https://github.com/mugnavo/tanstarter-plus/tree/60a26418ceff5fe50f246af60b4750c7ddf57886). See the [template changelog](https://github.com/mugnavo/tanstarter-plus/compare/60a26418ceff5fe50f246af60b4750c7ddf57886...main) for newer changes.
-
-```
-pnpm create mugnavo -t monorepo
-```
+Residex is a frontend-focused TanStack Start application in a pnpm monorepo.
 
 - [Vite Plus](https://viteplus.dev/) + pnpm workspaces with [catalogs](https://pnpm.io/catalogs)
 - [React 19](https://react.dev) + [React Compiler](https://react.dev/learn/react-compiler)
 - TanStack [Start](https://tanstack.com/start/latest) + [Router](https://tanstack.com/router/latest) + [Query](https://tanstack.com/query/latest) + [Form](https://tanstack.com/form/latest)
 - [Vite 8](https://vite.dev/) + [Nitro v3](https://nitro.build/)
 - [Tailwind CSS](https://tailwindcss.com/) + [shadcn/ui](https://ui.shadcn.com/) + [Base UI](https://base-ui.com/) (base-maia, [`--preset b1ZOKpgEC`](https://ui.shadcn.com/create?preset=b1ZOKpgEC&base=base&template=start))
-- [Drizzle ORM v1](https://orm.drizzle.team/docs/relations-v1-v2) (beta) + PostgreSQL
-- [Better Auth](https://www.better-auth.com/)
+- Shared UI primitives via [`@repo/ui`](./packages/ui)
 
 ```sh
 ├── apps
 │    ├── web                    # TanStack Start web app
 ├── packages
-│    ├── auth                   # Better Auth
-│    ├── db                     # Drizzle ORM + Drizzle Kit + PostgreSQL
 │    └── ui                     # shadcn/ui primitives & utils
 ├── tooling
 │    └── tsconfig               # Shared TypeScript configuration
@@ -47,39 +40,21 @@ pnpm create mugnavo -t monorepo
 > [!IMPORTANT]
 > This template requires [Vite+ `vp`](https://viteplus.dev/guide/#install-vp) and [pnpm](https://pnpm.io/installation) to be installed.
 
-1. [Use this template](https://github.com/new?template_name=tanstarter-plus&template_owner=mugnavo) or create a project using our CLI:
+1. Optionally create an `.env` file in [`/apps/web`](./apps/web/.env.example) if you want to override the default frontend settings.
 
-   ```
-   pnpm create mugnavo -t monorepo
-   ```
-
-2. Create `.env` files in [`/apps/web`](./apps/web/.env.example) and [`/packages/db`](./packages/db/.env.example) based on their respective `.env.example` files.
-
-3. Generate the initial migration with drizzle-kit, then apply to your database:
+2. Install dependencies:
 
    ```sh
-   pnpm db generate
-   pnpm db migrate
+   pnpm install
    ```
 
-   https://orm.drizzle.team/docs/migrations
-
-4. Run the development server:
+3. Run the development server:
 
    ```sh
    pnpm dev
    ```
 
    The development server should now be running at [http://localhost:3000](http://localhost:3000).
-
-> [!TIP]
-> If you want to run a local Postgres instance via Docker Compose with the dev server, you can use the [dev.sh](./dev.sh) script:
->
-> ```sh
-> ./dev.sh # runs "pnpm run --recursive --parallel dev"
-> # or
-> ./dev.sh web # runs "pnpm run --filter=@repo/web dev"
-> ```
 
 ## Deploying to production
 
@@ -92,16 +67,13 @@ Refer to the [TanStack Start hosting docs](https://tanstack.com/start/latest/doc
 Vite+ has support for [caching](https://viteplus.dev/guide/cache) via Vite Task. A `build` task is configured in [`apps/web/vite.config.ts`](./apps/web/vite.config.ts) that can enable faster builds via caching. When deploying, use `vp run build` as the build command.
 
 > [!IMPORTANT]
-> Task caching is **_currently disabled_** in the root [`vite.config.ts`](./vite.config.ts#L15-L20) since Vite+ only replays terminal output for now, not build artifacts. If your platform preserves build outputs between deployments, you can re-enable it. See [this issue](https://github.com/mugnavo/tanstarter-plus/issues/8) for more details.
+> Task caching is **_currently disabled_** in the root [`vite.config.ts`](./vite.config.ts#L15-L20) since Vite+ only replays terminal output for now, not build artifacts. If your platform preserves build outputs between deployments, you can re-enable it.
 
 ## Issue watchlist
 
-- [Template changelog](https://github.com/mugnavo/tanstarter-plus/compare/60a26418ceff5fe50f246af60b4750c7ddf57886...main) - Track template updates since this project was created.
 - [Router/Start issues](https://github.com/TanStack/router/issues) - TanStack Start is in RC.
 - [Devtools releases](https://github.com/TanStack/devtools/releases) - TanStack Devtools is in alpha and may still have breaking changes.
 - [Nitro v3 beta](https://nitro.build/blog/v3-beta) - This template is configured with Nitro v3 beta by default.
-- [Drizzle ORM v1 Beta](https://orm.drizzle.team/docs/relations-v1-v2) - Drizzle ORM v1 is in beta with relations v2.
-- [Better Auth experimental Drizzle adapter](https://github.com/better-auth/better-auth/pull/6913) - We're using a separate branch of Better Auth's Drizzle adapter that supports Drizzle relations v2.
 - [Vite+ issues](https://github.com/voidzero-dev/vite-plus/issues) - Vite+ is in alpha.
 
 ## Goodies
@@ -116,7 +88,6 @@ We use [Vite+ Commit Hooks](https://viteplus.dev/guide/commit-hooks) to run git 
 
 This template is configured for **[pnpm](https://pnpm.io/)** by default. Check the root [package.json](./package.json) and each workspace package's `package.json` for the full list of available scripts.
 
-- **`auth:generate`** - Regenerate the [auth db schema](./packages/db/src/schema/auth.schema.ts) if you've made changes to your Better Auth [config](./packages/auth/src/auth.ts).
 - **`ui`** - The shadcn/ui CLI. (e.g. `pnpm ui add button`)
 - **`format`**, **`lint`** - Run Oxfmt and Oxlint, or both via `pnpm check`.
 - **`deps`** - Selectively upgrade dependencies via taze.
@@ -126,7 +97,6 @@ This template is configured for **[pnpm](https://pnpm.io/)** by default. Check t
 
 #### Utilities
 
-- [`/auth/src/tanstack/middleware.ts`](./packages/auth/src/tanstack/middleware.ts) - Sample middleware for enforcing authentication on server functions & API routes.
 - [`/web/src/components/theme-toggle.tsx`](./apps/web/src/components/theme-toggle.tsx), [`/ui/lib/theme-provider.tsx`](./packages/ui/lib/theme-provider.tsx) - A theme toggle and provider for toggling between light and dark mode.
 
 ## License

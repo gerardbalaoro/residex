@@ -1,4 +1,3 @@
-import type { AuthQueryResult } from "@repo/auth/tanstack/queries";
 import { Toaster } from "@repo/ui/components/sonner";
 import { ThemeProvider } from "@repo/ui/lib/theme-provider";
 import { a11yDevtoolsPlugin } from "@tanstack/devtools-a11y/react";
@@ -18,15 +17,9 @@ import appCss from "~/styles.css?url";
 
 interface MyRouterContext {
   queryClient: QueryClient;
-  user: AuthQueryResult;
 }
 
 export const Route = createRootRouteWithContext<MyRouterContext>()({
-  // Typically we don't need the user immediately in landing pages.
-  // For protected routes with loader data, see /_auth/route.tsx
-  // beforeLoad: ({ context }) => {
-  //   context.queryClient.prefetchQuery(authQueryOptions());
-  // },
   head: () => ({
     meta: [
       {
@@ -41,17 +34,10 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
       },
       {
         name: "description",
-        content: "A TanStack Start project scaffolded with create-mugnavo.",
+        content: "Residex web application.",
       },
     ],
-    links: [
-      // Replace with your icons here, or remove if you have a favicon.ico in public/
-      {
-        rel: "icon",
-        href: "https://mugnavo.com/favicon.ico",
-      },
-      { rel: "stylesheet", href: appCss },
-    ],
+    links: [{ rel: "stylesheet", href: appCss }],
   }),
   shellComponent: RootDocument,
 });

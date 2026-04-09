@@ -11,8 +11,6 @@
   "dependencies": {
     "@fontsource-variable/dm-sans": "catalog:",
     "@icons-pack/react-simple-icons": "catalog:",
-    "@repo/auth": "workspace:*",
-    "@repo/db": "workspace:*",
     "@repo/ui": "workspace:*",
     "@tanstack/react-form-start": "catalog:",
     "@tanstack/react-query": "catalog:",
@@ -20,7 +18,6 @@
     "@tanstack/react-router-ssr-query": "catalog:",
     "@tanstack/react-start": "catalog:",
     "date-fns": "catalog:",
-    "drizzle-orm": "catalog:",
     "lucide-react": "catalog:",
     "motion": "catalog:",
     "nanoid": "catalog:",

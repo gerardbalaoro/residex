@@ -5,7 +5,6 @@
 - `pnpm build`: Only for build/bundler issues or verifying production output
 - `pnpm lint`: Type-checking & type-aware linting
 - `pnpm dev` runs indefinitely in watch mode
-- `pnpm db` for Drizzle Kit commands (e.g. `pnpm db generate` to generate a migration)
 
 Don't build after every change. If lint passes; assume changes work.
 
