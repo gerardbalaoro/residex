@@ -44,10 +44,8 @@
     "@vitejs/plugin-react": "catalog:",
     "babel-plugin-react-compiler": "catalog:",
     "nitro": "catalog:",
-    "portless": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:",
-    "vite": "catalog:",
-    "vite-plugin-svgr": "catalog:"
+    "vite": "catalog:"
   }
 }
