@@ -4,7 +4,23 @@ import { devtools } from "@tanstack/devtools-vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact, { reactCompilerPreset } from "@vitejs/plugin-react";
 import { nitro } from "nitro/vite";
-import { defineConfig } from "vite-plus";
+import { defineConfig, type Plugin } from "vite-plus";
+
+const portless: Plugin = {
+  name: "portless",
+  configureServer(server) {
+    // oxlint-disable-next-line typescript/unbound-method
+    const { printUrls } = server;
+
+    server.printUrls = () => {
+      if (process.env.PORTLESS_URL) {
+        server.resolvedUrls?.local?.push(process.env.PORTLESS_URL);
+      }
+
+      return printUrls();
+    };
+  },
+};
 
 export default defineConfig({
   run: {
@@ -55,5 +71,6 @@ export default defineConfig({
       presets: [reactCompilerPreset()],
     }),
     tailwindcss(),
+    portless,
   ],
 });

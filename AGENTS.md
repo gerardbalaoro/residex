@@ -8,7 +8,7 @@
 - Use shared pnpm catalog versions (`pnpm-workspace.yaml`) via `catalog:`.
 - For TanStack libraries, consult latest docs via `pnpm tanstack <command>` (see [Workflow](.agents/workflow.md#tanstack-cli)).
 - Don't build after every little change. If `pnpm lint` passes; assume changes work.
-- Don't the `dev` script, assume it is already running. Use `pnpm dlx portless get residex` to get the URL.
+- Don't the `dev` script, assume it is already running. Use `pnpm run dev:url` to get the URL.
 
 ## Topic-specific Guidelines
 
@@ -46,11 +46,3 @@ pnpm tanstack doc query framework/react/overview --docs-version v5 --json
 pnpm tanstack search-docs "server functions" --library start --json
 pnpm tanstack search-docs "loaders" --library router --framework react --json
 ```
-
-## Development Guidelines
-
-- Use `pnpm` and `pnpm dlx` over other package managers.
-- DO NOT run `build` to check for errors, use `pnpm check` and `pnpm check:fix`.
-- DO NOT run `dev`, assume it is already running.
-- When using `agent-browser`, prefer using the the existing chrome executable.
-  - For WSL, locate `chrome.exe` in the program files and use it.
