@@ -2,6 +2,7 @@ import { QueryClient } from "@tanstack/react-query";
 import { createRouter } from "@tanstack/react-router";
 import { setupRouterSsrQueryIntegration } from "@tanstack/react-router-ssr-query";
 
+import { AppSplash } from "~/components/app-splash";
 import { DefaultCatchBoundary } from "~/components/default-catch-boundary";
 import { DefaultNotFound } from "~/components/default-not-found";
 
@@ -24,6 +25,7 @@ export function getRouter() {
     // react-query will handle data fetching & caching
     // https://tanstack.com/router/latest/docs/framework/react/guide/data-loading#passing-all-loader-events-to-an-external-cache
     defaultPreloadStaleTime: 0,
+    defaultPendingComponent: AppSplash,
     defaultErrorComponent: DefaultCatchBoundary,
     defaultNotFoundComponent: DefaultNotFound,
     scrollRestoration: true,
