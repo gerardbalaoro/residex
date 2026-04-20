@@ -18,6 +18,8 @@
     "deps": "vpx taze@latest -Ilwr",
     "deps:major": "vpx taze@latest major -Ilwr",
     "tanstack": "vpx @tanstack/cli@latest",
+    "db:generate": "vp run --filter=@residex/db-client db:generate",
+    "db:check": "vp run --filter=@residex/db-client db:check",
     "ui": "vp run --filter=@residex/ui ui",
     "ui:web": "vp run --filter=@residex/web ui",
     "skills": "vpx skills@latest",

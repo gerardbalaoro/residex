@@ -1,0 +1,10 @@
+{
+  "extends": "@residex/tsconfig/base.json",
+  "compilerOptions": {
+    "paths": {
+      "@residex/db-client/*": ["./*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
