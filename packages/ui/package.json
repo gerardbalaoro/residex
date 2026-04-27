@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "@base-ui/react": "catalog:",
-    "@fontsource-variable/dm-sans": "catalog:",
     "@fontsource-variable/geist": "catalog:",
     "@icons-pack/react-simple-icons": "catalog:",
     "@tanstack/react-form-start": "catalog:",
@@ -24,7 +23,7 @@
     "lucide-react": "catalog:",
     "motion": "catalog:",
     "next-themes": "catalog:",
-    "shadcn": "catalog:",
+    "shadcn": "^4.2.0",
     "sonner": "catalog:",
     "tailwind-merge": "catalog:",
     "tw-animate-css": "catalog:",
