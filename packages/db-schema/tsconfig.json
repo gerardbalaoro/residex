@@ -1,0 +1,4 @@
+{
+  "extends": "@residex/tsconfig/base.json",
+  "include": ["src"]
+}
