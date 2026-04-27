@@ -55,9 +55,16 @@ export default defineConfig({
 
   resolve: {
     tsconfigPaths: true,
+    dedupe: ["@electric-sql/pglite-react"],
   },
   server: {
     port: 3000,
+  },
+  optimizeDeps: {
+    exclude: ["@electric-sql/pglite"],
+  },
+  worker: {
+    format: "es",
   },
   plugins: [
     svgr(),

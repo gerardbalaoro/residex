@@ -198,9 +198,21 @@ importers:
 
   apps/web:
     dependencies:
+      '@electric-sql/pglite':
+        specifier: 'catalog:'
+        version: 0.4.4
+      '@electric-sql/pglite-react':
+        specifier: 'catalog:'
+        version: 0.3.4(@electric-sql/pglite@0.4.4)(react@19.2.5)
       '@icons-pack/react-simple-icons':
         specifier: 'catalog:'
         version: 13.13.0(react@19.2.5)
+      '@residex/db-client':
+        specifier: workspace:*
+        version: link:../../packages/db-client
+      '@residex/db-schema':
+        specifier: workspace:*
+        version: link:../../packages/db-schema
       '@residex/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -222,6 +234,9 @@ importers:
       date-fns:
         specifier: 'catalog:'
         version: 4.1.0
+      drizzle-orm:
+        specifier: 'catalog:'
+        version: 0.45.2(@electric-sql/pglite@0.4.4)(@opentelemetry/api@1.9.1)
       lucide-react:
         specifier: 'catalog:'
         version: 1.8.0(react@19.2.5)
