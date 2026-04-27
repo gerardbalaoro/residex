@@ -9,50 +9,206 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthRouteRouteImport } from './routes/_auth/route'
+import { Route as AuthIndexRouteImport } from './routes/_auth/index'
+import { Route as AuthSkillsIndexRouteImport } from './routes/_auth/skills/index'
+import { Route as AuthSettingsIndexRouteImport } from './routes/_auth/settings/index'
+import { Route as AuthReportsIndexRouteImport } from './routes/_auth/reports/index'
+import { Route as AuthProceduresIndexRouteImport } from './routes/_auth/procedures/index'
+import { Route as AuthInstitutionsIndexRouteImport } from './routes/_auth/institutions/index'
+import { Route as AuthCasesIndexRouteImport } from './routes/_auth/cases/index'
 
-const IndexRoute = IndexRouteImport.update({
+const AuthRouteRoute = AuthRouteRouteImport.update({
+  id: '/_auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthIndexRoute = AuthIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => AuthRouteRoute,
+} as any)
+const AuthSkillsIndexRoute = AuthSkillsIndexRouteImport.update({
+  id: '/skills/',
+  path: '/skills/',
+  getParentRoute: () => AuthRouteRoute,
+} as any)
+const AuthSettingsIndexRoute = AuthSettingsIndexRouteImport.update({
+  id: '/settings/',
+  path: '/settings/',
+  getParentRoute: () => AuthRouteRoute,
+} as any)
+const AuthReportsIndexRoute = AuthReportsIndexRouteImport.update({
+  id: '/reports/',
+  path: '/reports/',
+  getParentRoute: () => AuthRouteRoute,
+} as any)
+const AuthProceduresIndexRoute = AuthProceduresIndexRouteImport.update({
+  id: '/procedures/',
+  path: '/procedures/',
+  getParentRoute: () => AuthRouteRoute,
+} as any)
+const AuthInstitutionsIndexRoute = AuthInstitutionsIndexRouteImport.update({
+  id: '/institutions/',
+  path: '/institutions/',
+  getParentRoute: () => AuthRouteRoute,
+} as any)
+const AuthCasesIndexRoute = AuthCasesIndexRouteImport.update({
+  id: '/cases/',
+  path: '/cases/',
+  getParentRoute: () => AuthRouteRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
+  '/': typeof AuthIndexRoute
+  '/cases/': typeof AuthCasesIndexRoute
+  '/institutions/': typeof AuthInstitutionsIndexRoute
+  '/procedures/': typeof AuthProceduresIndexRoute
+  '/reports/': typeof AuthReportsIndexRoute
+  '/settings/': typeof AuthSettingsIndexRoute
+  '/skills/': typeof AuthSkillsIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
+  '/': typeof AuthIndexRoute
+  '/cases': typeof AuthCasesIndexRoute
+  '/institutions': typeof AuthInstitutionsIndexRoute
+  '/procedures': typeof AuthProceduresIndexRoute
+  '/reports': typeof AuthReportsIndexRoute
+  '/settings': typeof AuthSettingsIndexRoute
+  '/skills': typeof AuthSkillsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
+  '/_auth': typeof AuthRouteRouteWithChildren
+  '/_auth/': typeof AuthIndexRoute
+  '/_auth/cases/': typeof AuthCasesIndexRoute
+  '/_auth/institutions/': typeof AuthInstitutionsIndexRoute
+  '/_auth/procedures/': typeof AuthProceduresIndexRoute
+  '/_auth/reports/': typeof AuthReportsIndexRoute
+  '/_auth/settings/': typeof AuthSettingsIndexRoute
+  '/_auth/skills/': typeof AuthSkillsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/cases/'
+    | '/institutions/'
+    | '/procedures/'
+    | '/reports/'
+    | '/settings/'
+    | '/skills/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/cases'
+    | '/institutions'
+    | '/procedures'
+    | '/reports'
+    | '/settings'
+    | '/skills'
+  id:
+    | '__root__'
+    | '/_auth'
+    | '/_auth/'
+    | '/_auth/cases/'
+    | '/_auth/institutions/'
+    | '/_auth/procedures/'
+    | '/_auth/reports/'
+    | '/_auth/settings/'
+    | '/_auth/skills/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
+  AuthRouteRoute: typeof AuthRouteRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
+    '/_auth': {
+      id: '/_auth'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_auth/': {
+      id: '/_auth/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof AuthIndexRouteImport
+      parentRoute: typeof AuthRouteRoute
+    }
+    '/_auth/skills/': {
+      id: '/_auth/skills/'
+      path: '/skills'
+      fullPath: '/skills/'
+      preLoaderRoute: typeof AuthSkillsIndexRouteImport
+      parentRoute: typeof AuthRouteRoute
+    }
+    '/_auth/settings/': {
+      id: '/_auth/settings/'
+      path: '/settings'
+      fullPath: '/settings/'
+      preLoaderRoute: typeof AuthSettingsIndexRouteImport
+      parentRoute: typeof AuthRouteRoute
+    }
+    '/_auth/reports/': {
+      id: '/_auth/reports/'
+      path: '/reports'
+      fullPath: '/reports/'
+      preLoaderRoute: typeof AuthReportsIndexRouteImport
+      parentRoute: typeof AuthRouteRoute
+    }
+    '/_auth/procedures/': {
+      id: '/_auth/procedures/'
+      path: '/procedures'
+      fullPath: '/procedures/'
+      preLoaderRoute: typeof AuthProceduresIndexRouteImport
+      parentRoute: typeof AuthRouteRoute
+    }
+    '/_auth/institutions/': {
+      id: '/_auth/institutions/'
+      path: '/institutions'
+      fullPath: '/institutions/'
+      preLoaderRoute: typeof AuthInstitutionsIndexRouteImport
+      parentRoute: typeof AuthRouteRoute
+    }
+    '/_auth/cases/': {
+      id: '/_auth/cases/'
+      path: '/cases'
+      fullPath: '/cases/'
+      preLoaderRoute: typeof AuthCasesIndexRouteImport
+      parentRoute: typeof AuthRouteRoute
     }
   }
 }
 
+interface AuthRouteRouteChildren {
+  AuthIndexRoute: typeof AuthIndexRoute
+  AuthCasesIndexRoute: typeof AuthCasesIndexRoute
+  AuthInstitutionsIndexRoute: typeof AuthInstitutionsIndexRoute
+  AuthProceduresIndexRoute: typeof AuthProceduresIndexRoute
+  AuthReportsIndexRoute: typeof AuthReportsIndexRoute
+  AuthSettingsIndexRoute: typeof AuthSettingsIndexRoute
+  AuthSkillsIndexRoute: typeof AuthSkillsIndexRoute
+}
+
+const AuthRouteRouteChildren: AuthRouteRouteChildren = {
+  AuthIndexRoute: AuthIndexRoute,
+  AuthCasesIndexRoute: AuthCasesIndexRoute,
+  AuthInstitutionsIndexRoute: AuthInstitutionsIndexRoute,
+  AuthProceduresIndexRoute: AuthProceduresIndexRoute,
+  AuthReportsIndexRoute: AuthReportsIndexRoute,
+  AuthSettingsIndexRoute: AuthSettingsIndexRoute,
+  AuthSkillsIndexRoute: AuthSkillsIndexRoute,
+}
+
+const AuthRouteRouteWithChildren = AuthRouteRoute._addFileChildren(
+  AuthRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
+  AuthRouteRoute: AuthRouteRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

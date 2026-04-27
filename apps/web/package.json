@@ -9,7 +9,6 @@
     "ui": "vpx shadcn@latest"
   },
   "dependencies": {
-    "@fontsource-variable/dm-sans": "catalog:",
     "@icons-pack/react-simple-icons": "catalog:",
     "@residex/ui": "workspace:*",
     "@tanstack/react-form-start": "catalog:",
@@ -46,6 +45,7 @@
     "nitro": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:",
-    "vite": "catalog:"
+    "vite": "catalog:",
+    "vite-plugin-svgr": "catalog:"
   }
 }

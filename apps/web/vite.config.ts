@@ -1,9 +1,12 @@
+/// <reference types="vite-plugin-svgr/client" />
+
 import babel from "@rolldown/plugin-babel";
 import tailwindcss from "@tailwindcss/vite";
 import { devtools } from "@tanstack/devtools-vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact, { reactCompilerPreset } from "@vitejs/plugin-react";
 import { nitro } from "nitro/vite";
+import svgr from "vite-plugin-svgr";
 import { defineConfig, type Plugin } from "vite-plus";
 
 const portless: Plugin = {
@@ -57,8 +60,11 @@ export default defineConfig({
     port: 3000,
   },
   plugins: [
+    svgr(),
     devtools(),
-    tanstackStart(),
+    tanstackStart({
+      spa: { enabled: true },
+    }),
     // https://tanstack.com/start/latest/docs/framework/react/guide/hosting
     nitro({
       // fixes SSR issues with Vite 8:
