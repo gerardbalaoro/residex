@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "@babel/core": "catalog:",
+    "@faker-js/faker": "catalog:",
     "@residex/tsconfig": "workspace:*",
     "@rolldown/plugin-babel": "catalog:",
     "@tailwindcss/vite": "catalog:",

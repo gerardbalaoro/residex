@@ -9,6 +9,7 @@ catalog:
   "@electric-sql/pglite": ^0.4.4
   "@electric-sql/pglite-react": "^0.3.4"
   "@electric-sql/pglite-sync": "^0.5.4"
+  "@faker-js/faker": ^10.4.0
   "@fontsource-variable/archivo": ^5.2.8
   "@fontsource-variable/geist": ^5.2.8
   "@icons-pack/react-simple-icons": ^13.13.0

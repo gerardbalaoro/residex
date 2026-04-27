@@ -4,6 +4,7 @@ import { formDevtoolsPlugin } from "@tanstack/react-form-devtools";
 import { ReactQueryDevtoolsPanel } from "@tanstack/react-query-devtools";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 
+import { AppSeedInstitutions } from "./app-seed-institutions";
 import { AppStorage } from "./app-storage";
 
 function AppDevtoolsPanel() {
@@ -19,6 +20,7 @@ function AppDevtoolsPanel() {
         }}
       >
         <AppStorage />
+        <AppSeedInstitutions />
       </div>
     </div>
   );
