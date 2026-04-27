@@ -6,7 +6,7 @@
       "~/*": ["./src/*"],
 
       // for shadcn CLI
-      "@repo/ui/*": ["../../packages/ui/*"]
+      "@residex/ui/*": ["../../packages/ui/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx"],

@@ -6,7 +6,7 @@
     "build": "vp run --recursive build",
     "build:web": "vp run web#build",
     "dev": "pnpm run --recursive --parallel dev",
-    "dev:web": "vp run --filter=@repo/web dev",
+    "dev:web": "vp run --filter=@residex/web dev",
     "lint": "vp lint --type-aware --type-check",
     "lint:fix": "vp lint --type-aware --type-check --fix",
     "format": "vp fmt",
@@ -17,14 +17,15 @@
     "deps": "vpx taze@latest -Ilwr",
     "deps:major": "vpx taze@latest major -Ilwr",
     "tanstack": "vpx @tanstack/cli@latest",
-    "ui": "vp run --filter=@repo/ui ui",
-    "ui:web": "vp run --filter=@repo/web ui",
+    "ui": "vp run --filter=@residex/ui ui",
+    "ui:web": "vp run --filter=@residex/web ui",
     "skills": "vpx skills@latest",
     "intent": "vpx @tanstack/intent@latest"
   },
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "catalog:",
     "@tanstack/eslint-plugin-router": "catalog:",
+    "eslint-plugin-better-tailwindcss": "catalog:",
     "eslint-plugin-react-hooks": "catalog:",
     "vite-plus": "catalog:"
   },

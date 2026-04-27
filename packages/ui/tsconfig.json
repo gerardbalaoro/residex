@@ -2,7 +2,7 @@
   "extends": "@residex/tsconfig/base.json",
   "compilerOptions": {
     "paths": {
-      "@repo/ui/*": ["./*"]
+      "@residex/ui/*": ["./*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx"],

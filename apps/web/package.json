@@ -1,9 +1,9 @@
 {
-  "name": "@repo/web",
+  "name": "@residex/web",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vp dev",
+    "dev": "portless run --name residex vp dev",
     "preview": "vp preview",
     "start": "node .output/server/index.mjs",
     "ui": "vpx shadcn@latest"
@@ -44,8 +44,10 @@
     "@vitejs/plugin-react": "catalog:",
     "babel-plugin-react-compiler": "catalog:",
     "nitro": "catalog:",
+    "portless": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:",
-    "vite": "catalog:"
+    "vite": "catalog:",
+    "vite-plugin-svgr": "catalog:"
   }
 }

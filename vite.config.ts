@@ -75,7 +75,16 @@ export default defineConfig({
         name: "eslint-tanstack-query",
         specifier: "@tanstack/eslint-plugin-query",
       },
+      {
+        name: "better-tailwindcss",
+        specifier: "eslint-plugin-better-tailwindcss",
+      },
     ],
+    settings: {
+      "better-tailwindcss": {
+        entryPoint: "./apps/web/src/styles.css",
+      },
+    },
     rules: {
       "no-deprecated": "warn",
       "typescript/no-floating-promises": "off",
@@ -90,6 +99,9 @@ export default defineConfig({
       "eslint-tanstack-query/infinite-query-property-order": "warn",
       "eslint-tanstack-query/no-void-query-fn": "warn",
       "eslint-tanstack-query/mutation-property-order": "warn",
+
+      "better-tailwindcss/enforce-consistent-class-order": "warn",
+      "better-tailwindcss/enforce-canonical-classes": "warn",
 
       // ref: https://github.com/TheAlexLichter/oxlint-react-compiler-rules/issues/1
       // Recommended rules (from LintRulePreset.Recommended)

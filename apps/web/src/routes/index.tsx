@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   return (
     <main className="min-h-screen bg-linear-to-b from-background via-background to-muted/30 text-foreground">
-      <div className="mx-auto flex min-h-screen w-full max-w-5xl flex-col px-6 py-6 sm:px-8 lg:px-10">
+      <div className="mx-auto flex min-h-screen w-full max-w-5xl flex-col p-6 sm:px-8 lg:px-10">
         <header className="flex items-center justify-between gap-4">
           <div>
             <p className="text-sm font-medium text-muted-foreground">residex</p>
@@ -23,7 +23,7 @@ function HomePage() {
               <h1 className="text-4xl font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl">
                 Welcome to residex.
               </h1>
-              <p className="max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">
+              <p className="max-w-2xl text-base/7 text-muted-foreground sm:text-lg">
                 A clean web foundation built with TanStack Start, shared UI components, and a
                 lightweight design system ready for your product experience.
               </p>
@@ -34,7 +34,7 @@ function HomePage() {
                 <h2 className="text-sm font-semibold tracking-[0.16em] text-muted-foreground uppercase">
                   Routing
                 </h2>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                <p className="mt-3 text-sm/6 text-muted-foreground">
                   TanStack Router and Query are wired up and ready for app flows.
                 </p>
               </div>
@@ -43,7 +43,7 @@ function HomePage() {
                 <h2 className="text-sm font-semibold tracking-[0.16em] text-muted-foreground uppercase">
                   UI
                 </h2>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                <p className="mt-3 text-sm/6 text-muted-foreground">
                   Shared primitives, theming, and utility styles live in `@residex/ui`.
                 </p>
               </div>
@@ -52,7 +52,7 @@ function HomePage() {
                 <h2 className="text-sm font-semibold tracking-[0.16em] text-muted-foreground uppercase">
                   Next
                 </h2>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                <p className="mt-3 text-sm/6 text-muted-foreground">
                   Start building routes, layouts, and product features from a clean slate.
                 </p>
               </div>
