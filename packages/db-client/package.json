@@ -1,0 +1,31 @@
+{
+  "name": "@residex/db-client",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./*": "./src/*.ts"
+  },
+  "scripts": {
+    "db": "drizzle-kit",
+    "db:generate": "drizzle-kit generate",
+    "db:check": "drizzle-kit check"
+  },
+  "dependencies": {
+    "@residex/db-schema": "workspace:*",
+    "drizzle-orm": "catalog:"
+  },
+  "devDependencies": {
+    "@residex/tsconfig": "workspace:*",
+    "@types/react": "catalog:",
+    "drizzle-kit": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:"
+  },
+  "peerDependencies": {
+    "@electric-sql/pglite": "catalog:",
+    "@electric-sql/pglite-react": "catalog:",
+    "@electric-sql/pglite-sync": "catalog:",
+    "react": "catalog:"
+  }
+}
