@@ -6,7 +6,7 @@
   "tailwind": {
     "config": "",
     "css": "../../packages/ui/styles/base.css",
-    "baseColor": "neutral",
+    "baseColor": "olive",
     "cssVariables": true,
     "prefix": ""
   },
@@ -14,12 +14,12 @@
   "rtl": false,
   "aliases": {
     "components": "~/components",
-    "utils": "@repo/ui/lib/utils",
-    "ui": "@repo/ui/components",
-    "lib": "@repo/ui/lib",
-    "hooks": "@repo/ui/hooks"
+    "utils": "@residex/ui/lib/utils",
+    "ui": "@residex/ui/components",
+    "lib": "@residex/ui/lib",
+    "hooks": "@residex/ui/hooks"
   },
-  "menuColor": "default",
+  "menuColor": "default-translucent",
   "menuAccent": "subtle",
   "registries": {}
 }

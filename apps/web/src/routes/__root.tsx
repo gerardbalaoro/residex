@@ -1,5 +1,5 @@
-import { Toaster } from "@repo/ui/components/sonner";
-import { ThemeProvider } from "@repo/ui/lib/theme-provider";
+import { Toaster } from "@residex/ui/components/sonner";
+import { ThemeProvider } from "@residex/ui/lib/theme-provider";
 import { a11yDevtoolsPlugin } from "@tanstack/devtools-a11y/react";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import { formDevtoolsPlugin } from "@tanstack/react-form-devtools";

@@ -1,11 +1,11 @@
-import { Button } from "@repo/ui/components/button";
+import { Button } from "@residex/ui/components/button";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuTrigger,
-} from "@repo/ui/components/dropdown-menu";
-import { useTheme } from "@repo/ui/lib/theme-provider";
+} from "@residex/ui/components/dropdown-menu";
+import { useTheme } from "@residex/ui/lib/theme-provider";
 import { SunIcon, MoonIcon } from "lucide-react";
 
 export function ThemeToggle() {

@@ -1,4 +1,6 @@
-import { cn } from "@repo/ui/lib/utils";
+"use client";
+
+import { cn } from "@residex/ui/lib/utils";
 import * as React from "react";
 
 function Label({ className, ...props }: React.ComponentProps<"label">) {

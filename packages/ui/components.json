@@ -13,13 +13,13 @@
   "iconLibrary": "lucide",
   "rtl": false,
   "aliases": {
-    "components": "@repo/ui/components",
-    "utils": "@repo/ui/lib/utils",
-    "ui": "@repo/ui/components",
-    "lib": "@repo/ui/lib",
-    "hooks": "@repo/ui/hooks"
+    "components": "@residex/ui/components",
+    "utils": "@residex/ui/lib/utils",
+    "ui": "@residex/ui/components",
+    "lib": "@residex/ui/lib",
+    "hooks": "@residex/ui/hooks"
   },
-  "menuColor": "default",
+  "menuColor": "default-translucent",
   "menuAccent": "subtle",
   "registries": {}
 }

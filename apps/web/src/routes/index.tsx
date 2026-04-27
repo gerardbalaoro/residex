@@ -44,7 +44,7 @@ function HomePage() {
                   UI
                 </h2>
                 <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                  Shared primitives, theming, and utility styles live in `@repo/ui`.
+                  Shared primitives, theming, and utility styles live in `@residex/ui`.
                 </p>
               </div>
 

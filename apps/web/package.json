@@ -11,7 +11,7 @@
   "dependencies": {
     "@fontsource-variable/dm-sans": "catalog:",
     "@icons-pack/react-simple-icons": "catalog:",
-    "@repo/ui": "workspace:*",
+    "@residex/ui": "workspace:*",
     "@tanstack/react-form-start": "catalog:",
     "@tanstack/react-query": "catalog:",
     "@tanstack/react-router": "catalog:",
@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@babel/core": "catalog:",
-    "@repo/tsconfig": "workspace:*",
+    "@residex/tsconfig": "workspace:*",
     "@rolldown/plugin-babel": "catalog:",
     "@tailwindcss/vite": "catalog:",
     "@tanstack/devtools-a11y": "catalog:",
